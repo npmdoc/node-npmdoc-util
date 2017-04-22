@@ -1,0 +1,729 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/defunctzombie/node-util"
+
+    >util (v0.10.3)</a>
+</h1>
+<h4>Node.JS util module</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.util">module util</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.util._extend">
+            function <span class="apidocSignatureSpan">util.</span>_extend
+            <span class="apidocSignatureSpan">(origin, add)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.util.debuglog">
+            function <span class="apidocSignatureSpan">util.</span>debuglog
+            <span class="apidocSignatureSpan">(set)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.util.deprecate">
+            function <span class="apidocSignatureSpan">util.</span>deprecate
+            <span class="apidocSignatureSpan">(fn, msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.util.format">
+            function <span class="apidocSignatureSpan">util.</span>format
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.util.inherits">
+            function <span class="apidocSignatureSpan">util.</span>inherits
+            <span class="apidocSignatureSpan">(ctor, superCtor)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.util.inspect">
+            function <span class="apidocSignatureSpan">util.</span>inspect
+            <span class="apidocSignatureSpan">(obj, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.util.isArray">
+            function <span class="apidocSignatureSpan">util.</span>isArray
+            <span class="apidocSignatureSpan">(ar)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.util.isBoolean">
+            function <span class="apidocSignatureSpan">util.</span>isBoolean
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.util.isBuffer">
+            function <span class="apidocSignatureSpan">util.</span>isBuffer
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.util.isDate">
+            function <span class="apidocSignatureSpan">util.</span>isDate
+            <span class="apidocSignatureSpan">(d)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.util.isError">
+            function <span class="apidocSignatureSpan">util.</span>isError
+            <span class="apidocSignatureSpan">(e)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.util.isFunction">
+            function <span class="apidocSignatureSpan">util.</span>isFunction
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.util.isNull">
+            function <span class="apidocSignatureSpan">util.</span>isNull
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.util.isNullOrUndefined">
+            function <span class="apidocSignatureSpan">util.</span>isNullOrUndefined
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.util.isNumber">
+            function <span class="apidocSignatureSpan">util.</span>isNumber
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.util.isObject">
+            function <span class="apidocSignatureSpan">util.</span>isObject
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.util.isPrimitive">
+            function <span class="apidocSignatureSpan">util.</span>isPrimitive
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.util.isRegExp">
+            function <span class="apidocSignatureSpan">util.</span>isRegExp
+            <span class="apidocSignatureSpan">(re)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.util.isString">
+            function <span class="apidocSignatureSpan">util.</span>isString
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.util.isSymbol">
+            function <span class="apidocSignatureSpan">util.</span>isSymbol
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.util.isUndefined">
+            function <span class="apidocSignatureSpan">util.</span>isUndefined
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.util.log">
+            function <span class="apidocSignatureSpan">util.</span>log
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.util" id="apidoc.module.util">module util</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.util._extend" id="apidoc.element.util._extend">
+        function <span class="apidocSignatureSpan">util.</span>_extend
+        <span class="apidocSignatureSpan">(origin, add)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_extend = function (origin, add) {
+  // Don&#x27;t do anything if add isn&#x27;t an object
+  if (!add || !isObject(add)) return origin;
+
+  var keys = Object.keys(add);
+  var i = keys.length;
+  while (i--) {
+    origin[keys[i]] = add[keys[i]];
+  }
+  return origin;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.util.debuglog" id="apidoc.element.util.debuglog">
+        function <span class="apidocSignatureSpan">util.</span>debuglog
+        <span class="apidocSignatureSpan">(set)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">debuglog = function (set) {
+  if (isUndefined(debugEnviron))
+    debugEnviron = process.env.NODE_DEBUG || &#x27;&#x27;;
+  set = set.toUpperCase();
+  if (!debugs[set]) {
+    if (new RegExp(&#x27;\\b&#x27; + set + &#x27;\\b&#x27;, &#x27;i&#x27;).test(debugEnviron)) {
+      var pid = process.pid;
+      debugs[set] = function() {
+        var msg = exports.format.apply(exports, arguments);
+        console.error(&#x27;%s %d: %s&#x27;, set, pid, msg);
+      };
+    } else {
+      debugs[set] = function() {};
+    }
+  }
+  return debugs[set];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.util.deprecate" id="apidoc.element.util.deprecate">
+        function <span class="apidocSignatureSpan">util.</span>deprecate
+        <span class="apidocSignatureSpan">(fn, msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deprecate = function (fn, msg) {
+  // Allow for deprecating things in the process of starting up.
+  if (isUndefined(global.process)) {
+    return function() {
+      return exports.deprecate(fn, msg).apply(this, arguments);
+    };
+  }
+
+  if (process.noDeprecation === true) {
+    return fn;
+  }
+
+  var warned = false;
+  function deprecated() {
+    if (!warned) {
+      if (process.throwDeprecation) {
+        throw new Error(msg);
+      } else if (process.traceDeprecation) {
+        console.trace(msg);
+      } else {
+        console.error(msg);
+      }
+      warned = true;
+    }
+    return fn.apply(this, arguments);
+  }
+
+  return deprecated;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.util.format" id="apidoc.element.util.format">
+        function <span class="apidocSignatureSpan">util.</span>format
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">format = function (f) {
+  if (!isString(f)) {
+    var objects = [];
+    for (var i = 0; i &#x3c; arguments.length; i++) {
+      objects.push(inspect(arguments[i]));
+    }
+    return objects.join(&#x27; &#x27;);
+  }
+
+  var i = 1;
+  var args = arguments;
+  var len = args.length;
+  var str = String(f).replace(formatRegExp, function(x) {
+    if (x === &#x27;%%&#x27;) return &#x27;%&#x27;;
+    if (i &#x3e;= len) return x;
+    switch (x) {
+      case &#x27;%s&#x27;: return String(args[i++]);
+      case &#x27;%d&#x27;: return Number(args[i++]);
+      case &#x27;%j&#x27;:
+        try {
+          return JSON.stringify(args[i++]);
+        } catch (_) {
+          return &#x27;[Circular]&#x27;;
+        }
+      default:
+        return x;
+    }
+  });
+  for (var x = args[i]; i &#x3c; len; x = args[++i]) {
+    if (isNull(x) || !isObject(x)) {
+      str += &#x27; &#x27; + x;
+    } else {
+      str += &#x27; &#x27; + inspect(x);
+    }
+  }
+  return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.util.inherits" id="apidoc.element.util.inherits">
+        function <span class="apidocSignatureSpan">util.</span>inherits
+        <span class="apidocSignatureSpan">(ctor, superCtor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inherits = function (ctor, superCtor) {
+
+  if (ctor === undefined || ctor === null)
+    throw new TypeError(&#x27;The constructor to &#x22;inherits&#x22; must not be &#x27; +
+                        &#x27;null or undefined&#x27;);
+
+  if (superCtor === undefined || superCtor === null)
+    throw new TypeError(&#x27;The super constructor to &#x22;inherits&#x22; must not &#x27; +
+                        &#x27;be null or undefined&#x27;);
+
+  if (superCtor.prototype === undefined)
+    throw new TypeError(&#x27;The super constructor to &#x22;inherits&#x22; must &#x27; +
+                        &#x27;have a prototype&#x27;);
+
+  ctor.super_ = superCtor;
+  Object.setPrototypeOf(ctor.prototype, superCtor.prototype);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.util.inspect" id="apidoc.element.util.inspect">
+        function <span class="apidocSignatureSpan">util.</span>inspect
+        <span class="apidocSignatureSpan">(obj, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function inspect(obj, opts) {
+  // default options
+  var ctx = {
+    seen: [],
+    stylize: stylizeNoColor
+  };
+  // legacy...
+  if (arguments.length &#x3e;= 3) ctx.depth = arguments[2];
+  if (arguments.length &#x3e;= 4) ctx.colors = arguments[3];
+  if (isBoolean(opts)) {
+    // legacy...
+    ctx.showHidden = opts;
+  } else if (opts) {
+    // got an &#x22;options&#x22; object
+    exports._extend(ctx, opts);
+  }
+  // set default options
+  if (isUndefined(ctx.showHidden)) ctx.showHidden = false;
+  if (isUndefined(ctx.depth)) ctx.depth = 2;
+  if (isUndefined(ctx.colors)) ctx.colors = false;
+  if (isUndefined(ctx.customInspect)) ctx.customInspect = true;
+  if (ctx.colors) ctx.stylize = stylizeWithColor;
+  return formatValue(ctx, obj, ctx.depth);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.util.isArray" id="apidoc.element.util.isArray">
+        function <span class="apidocSignatureSpan">util.</span>isArray
+        <span class="apidocSignatureSpan">(ar)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isArray(ar) {
+  return Array.isArray(ar);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.util.isBoolean" id="apidoc.element.util.isBoolean">
+        function <span class="apidocSignatureSpan">util.</span>isBoolean
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isBoolean(arg) {
+  return typeof arg === &#x27;boolean&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.util.isBuffer" id="apidoc.element.util.isBuffer">
+        function <span class="apidocSignatureSpan">util.</span>isBuffer
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isBuffer(arg) {
+  return arg instanceof Buffer;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.util.isDate" id="apidoc.element.util.isDate">
+        function <span class="apidocSignatureSpan">util.</span>isDate
+        <span class="apidocSignatureSpan">(d)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isDate(d) {
+  return isObject(d) &#x26;&#x26; objectToString(d) === &#x27;[object Date]&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.util.isError" id="apidoc.element.util.isError">
+        function <span class="apidocSignatureSpan">util.</span>isError
+        <span class="apidocSignatureSpan">(e)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isError(e) {
+  return isObject(e) &#x26;&#x26;
+      (objectToString(e) === &#x27;[object Error]&#x27; || e instanceof Error);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.util.isFunction" id="apidoc.element.util.isFunction">
+        function <span class="apidocSignatureSpan">util.</span>isFunction
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isFunction(arg) {
+  return typeof arg === &#x27;function&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.util.isNull" id="apidoc.element.util.isNull">
+        function <span class="apidocSignatureSpan">util.</span>isNull
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isNull(arg) {
+  return arg === null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.util.isNullOrUndefined" id="apidoc.element.util.isNullOrUndefined">
+        function <span class="apidocSignatureSpan">util.</span>isNullOrUndefined
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isNullOrUndefined(arg) {
+  return arg == null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.util.isNumber" id="apidoc.element.util.isNumber">
+        function <span class="apidocSignatureSpan">util.</span>isNumber
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isNumber(arg) {
+  return typeof arg === &#x27;number&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.util.isObject" id="apidoc.element.util.isObject">
+        function <span class="apidocSignatureSpan">util.</span>isObject
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isObject(arg) {
+  return typeof arg === &#x27;object&#x27; &#x26;&#x26; arg !== null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.util.isPrimitive" id="apidoc.element.util.isPrimitive">
+        function <span class="apidocSignatureSpan">util.</span>isPrimitive
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isPrimitive(arg) {
+  return arg === null ||
+         typeof arg === &#x27;boolean&#x27; ||
+         typeof arg === &#x27;number&#x27; ||
+         typeof arg === &#x27;string&#x27; ||
+         typeof arg === &#x27;symbol&#x27; ||  // ES6 symbol
+         typeof arg === &#x27;undefined&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.util.isRegExp" id="apidoc.element.util.isRegExp">
+        function <span class="apidocSignatureSpan">util.</span>isRegExp
+        <span class="apidocSignatureSpan">(re)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isRegExp(re) {
+  return isObject(re) &#x26;&#x26; objectToString(re) === &#x27;[object RegExp]&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.util.isString" id="apidoc.element.util.isString">
+        function <span class="apidocSignatureSpan">util.</span>isString
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isString(arg) {
+  return typeof arg === &#x27;string&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.util.isSymbol" id="apidoc.element.util.isSymbol">
+        function <span class="apidocSignatureSpan">util.</span>isSymbol
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isSymbol(arg) {
+  return typeof arg === &#x27;symbol&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.util.isUndefined" id="apidoc.element.util.isUndefined">
+        function <span class="apidocSignatureSpan">util.</span>isUndefined
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isUndefined(arg) {
+  return arg === void 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.util.log" id="apidoc.element.util.log">
+        function <span class="apidocSignatureSpan">util.</span>log
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">log = function () {
+  console.log(&#x27;%s - %s&#x27;, timestamp(), exports.format.apply(exports, arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
